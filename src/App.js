@@ -24,7 +24,7 @@ export default function App() {
     let newTodo = {
       id: Date.now(),
       title: value,
-      completed: false,
+      completed: true,
     };
     // 원래 있던 할 일에 새로운 할일 더하기
     setTodoData((prev) => [...prev, newTodo]);
@@ -32,9 +32,9 @@ export default function App() {
   };
 
   return (
-    <div className='flex items-center justify-center'>
-      <div>
-        <div>
+    <div className='flex items-center justify-center w-screen h-screen bg-blue-100'>
+      <div className='w-full p-6 m-4 bg-white rounded shadow lg:max-w-lg'>
+        <div className='flex justify-between mb-3'>
           <h1>할일목록</h1>
         </div>
         <Lists todoData={todoData} setTodoData={setTodoData} />
